@@ -1,14 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://PracticeScene.gd" type="Script" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
-[ext_resource path="res://TestPlayerScene.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Bottles/Bottles.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Bottles/RigidBody2D.gd" type="Script" id=5]
-
-
-[ext_resource path="res://icon.png" type="Texture" id=1]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://SpawnManager.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -16,16 +9,19 @@
 custom_solver_bias = 0.0
 extents = Vector2( 408.333, 32.6514 )
 
-[node name="Node2D" type="Node2D" index="0"]
+[node name="Node2D" type="Node2D"]
 
-script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
+position = Vector2( 502.127, 461.23 )
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
+[node name="Player" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 231.957, -244.163 )
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
 
 texture = ExtResource( 2 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." index="1"]
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="2"]
 
 editor/display_folded = true
 input_pickable = false
@@ -38,13 +34,10 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
 
-position = Vector2( 12.6143, 4.20471 )
 shape = SubResource( 1 )
-_sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="RigidBody2D" parent="." index="2" instance=ExtResource( 3 )]
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="3"]
 
-position = Vector2( -400, -200 )
 editor/display_folded = true
 position = Vector2( -145.56, -157.803 )
 input_pickable = false
@@ -62,7 +55,7 @@ rotation = 1.5708
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="." index="3"]
+[node name="StaticBody2D3" type="StaticBody2D" parent="." index="4"]
 
 editor/display_folded = true
 position = Vector2( 448.923, -103.388 )
@@ -81,14 +74,12 @@ rotation = 1.5708
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="RigidBody2D2" parent="." index="3" instance=ExtResource( 4 )]
-
-script = ExtResource( 5 )
-
 [node name="SpawnManager" type="Node2D" parent="." index="5"]
 
+editor/display_folded = true
 position = Vector2( 47.7996, -266.89 )
 script = ExtResource( 3 )
+spawnRate = 7.0
 
 [node name="Spawn" type="Node2D" parent="SpawnManager" index="0"]
 
