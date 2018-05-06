@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://PlayerController.gd" type="Script" id=1]
 [ext_resource path="res://Cricket/Walk/Cricket_W0.png" type="Texture" id=2]
@@ -30,6 +30,7 @@
 [ext_resource path="res://SoundWeapon.gd" type="Script" id=28]
 [ext_resource path="res://icon.png" type="Texture" id=29]
 [ext_resource path="res://Cricket/Wave.png" type="Texture" id=30]
+[ext_resource path="res://SoundWave.gd" type="Script" id=31]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -84,9 +85,8 @@ shader_param/uvScale = Vector2( 20, 1 )
 shader_param/uvOffset = Vector2( 0, 1 )
 _sections_unfolded = [ "Resource", "shader_param" ]
 
-[node name="RigidBody2D" type="KinematicBody2D"]
+[node name="RigidBody2D" type="KinematicBody2D" index="0"]
 
-editor/display_folded = true
 position = Vector2( 348.434, 222.681 )
 input_pickable = false
 collision_layer = 1
@@ -141,6 +141,16 @@ position = Vector2( 1202.53, -6.19055 )
 scale = Vector2( 5, 0.5 )
 texture = ExtResource( 30 )
 _sections_unfolded = [ "Material", "Transform" ]
+
+[node name="RayCast2D" type="RayCast2D" parent="GunJoint/Muzzle" index="1"]
+
+rotation = 4.71239
+enabled = false
+exclude_parent = true
+cast_to = Vector2( 0, 10 )
+collision_mask = 1
+script = ExtResource( 31 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Camera2D" type="Camera2D" parent="." index="3"]
 
