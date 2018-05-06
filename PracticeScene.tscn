@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
-[ext_resource path="res://TestPlayerScene.tscn" type="PackedScene" id=2]
+[ext_resource path="res://PracticeScene.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://TestPlayerScene.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Bottles/Bottles.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Bottles/RigidBody2D.gd" type="Script" id=5]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -10,15 +14,15 @@ extents = Vector2( 408.333, 32.6514 )
 
 [node name="Node2D" type="Node2D" index="0"]
 
-position = Vector2( 502.127, 461.23 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="1"]
 
-editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -29,48 +33,17 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
 
+position = Vector2( 12.6143, 4.20471 )
 shape = SubResource( 1 )
+_sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="." index="2"]
+[node name="RigidBody2D" parent="." index="2" instance=ExtResource( 3 )]
 
-editor/display_folded = true
-position = Vector2( -145.56, -157.803 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" index="0"]
-
-position = Vector2( -82.9827, -10.883 )
-rotation = 1.5708
-shape = SubResource( 1 )
+position = Vector2( -400, -200 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="." index="3"]
+[node name="RigidBody2D2" parent="." index="3" instance=ExtResource( 4 )]
 
-editor/display_folded = true
-position = Vector2( 448.923, -103.388 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" index="0"]
-
-position = Vector2( -82.9827, -10.883 )
-rotation = 1.5708
-shape = SubResource( 1 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="RigidBody2D" parent="." index="4" instance=ExtResource( 2 )]
-
-position = Vector2( 231.957, -244.163 )
+script = ExtResource( 5 )
 
 
