@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+path="res://.import/Cricket_I4.png-4188447316cf87ec3313830ae915c646.stex"
 
 [deps]
 
-source_file="res://icon.png"
-source_md5="ae7e641067601e2184afcade49abd283"
+source_file="res://Cricket/Idle/Cricket_I4.png"
+source_md5="8dfc6c44cef7ce303d9328c5d6cd0924"
 
-dest_files=[ "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex" ]
-dest_md5="f3ac00f2e4ea4f7009844ab942b0ffc8"
+dest_files=[ "res://.import/Cricket_I4.png-4188447316cf87ec3313830ae915c646.stex" ]
+dest_md5="8fcf2f56768f59f2658eeff10f11e91e"
 
 [params]
 
@@ -18,7 +18,7 @@ compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
-flags/repeat=1
+flags/repeat=0
 flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false

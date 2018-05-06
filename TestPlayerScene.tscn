@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://PlayerController.gd" type="Script" id=1]
 [ext_resource path="res://Cricket/Walk/Cricket_W0.png" type="Texture" id=2]
@@ -8,17 +8,27 @@
 [ext_resource path="res://Cricket/Walk/Cricket_W4.png" type="Texture" id=6]
 [ext_resource path="res://Cricket/Walk/Cricket_W5.png" type="Texture" id=7]
 [ext_resource path="res://Cricket/Walk/Cricket_W6.png" type="Texture" id=8]
-[ext_resource path="res://Cricket/jump/Cricket_J0.png" type="Texture" id=9]
-[ext_resource path="res://Cricket/jump/Cricket_J2.png" type="Texture" id=10]
-[ext_resource path="res://Cricket/jump/Cricket_J4.png" type="Texture" id=11]
-[ext_resource path="res://Cricket/jump/Cricket_J6.png" type="Texture" id=12]
-[ext_resource path="res://Cricket/jump/Cricket_J8.png" type="Texture" id=13]
-[ext_resource path="res://Cricket/jump/Cricket_J10.png" type="Texture" id=14]
-[ext_resource path="res://Cricket/jump/Cricket_J12.png" type="Texture" id=15]
-[ext_resource path="res://Cricket/jump/Cricket_J14.png" type="Texture" id=16]
-[ext_resource path="res://Cricket/jump/Cricket_J16.png" type="Texture" id=17]
-[ext_resource path="res://Cricket/jump/Cricket_J18.png" type="Texture" id=18]
-[ext_resource path="res://Cricket/jump/Cricket_J20.png" type="Texture" id=19]
+[ext_resource path="res://Cricket/Idle/Cricket_I0.png" type="Texture" id=9]
+[ext_resource path="res://Cricket/Idle/Cricket_I1.png" type="Texture" id=10]
+[ext_resource path="res://Cricket/Idle/Cricket_I2.png" type="Texture" id=11]
+[ext_resource path="res://Cricket/Idle/Cricket_I3.png" type="Texture" id=12]
+[ext_resource path="res://Cricket/Idle/Cricket_I4.png" type="Texture" id=13]
+[ext_resource path="res://Cricket/Idle/Cricket_I6.png" type="Texture" id=14]
+[ext_resource path="res://Cricket/Idle/Cricket_I5.png" type="Texture" id=15]
+[ext_resource path="res://Cricket/Idle/Cricket_I7.png" type="Texture" id=16]
+[ext_resource path="res://Cricket/Idle/Cricket_I8.png" type="Texture" id=17]
+[ext_resource path="res://Cricket/jump/Cricket_J2.png" type="Texture" id=18]
+[ext_resource path="res://Cricket/jump/Cricket_J4.png" type="Texture" id=19]
+[ext_resource path="res://Cricket/jump/Cricket_J6.png" type="Texture" id=20]
+[ext_resource path="res://Cricket/jump/Cricket_J8.png" type="Texture" id=21]
+[ext_resource path="res://Cricket/jump/Cricket_J10.png" type="Texture" id=22]
+[ext_resource path="res://Cricket/jump/Cricket_J12.png" type="Texture" id=23]
+[ext_resource path="res://Cricket/jump/Cricket_J14.png" type="Texture" id=24]
+[ext_resource path="res://Cricket/jump/Cricket_J16.png" type="Texture" id=25]
+[ext_resource path="res://Cricket/jump/Cricket_J18.png" type="Texture" id=26]
+[ext_resource path="res://Cricket/jump/Cricket_J20.png" type="Texture" id=27]
+[ext_resource path="res://SoundWeapon.gd" type="Script" id=28]
+[ext_resource path="res://icon.png" type="Texture" id=29]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -26,20 +36,20 @@ animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "Walk",
-"speed": 5.0
+"speed": 50.0
 }, {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
-"loop": true,
+"frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
+"loop": false,
 "name": "Jump",
-"speed": 5.0
+"speed": 10.0
 }, {
-"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
-"loop": true,
+"frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ) ],
+"loop": false,
 "name": "Land",
 "speed": 5.0
 } ]
@@ -50,7 +60,7 @@ _sections_unfolded = [ "Resource" ]
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="RigidBody2D" type="KinematicBody2D" index="0"]
+[node name="RigidBody2D" type="KinematicBody2D"]
 
 position = Vector2( 348.434, 222.681 )
 input_pickable = false
@@ -74,5 +84,39 @@ animation = "Idle"
 position = Vector2( 0.317659, -0.483437 )
 scale = Vector2( 3.43649, 3.43649 )
 shape = SubResource( 2 )
+
+[node name="GunJoint" type="Node2D" parent="." index="2"]
+
+position = Vector2( -0.104645, 6.47066 )
+rotation = 0.00174533
+script = ExtResource( 28 )
+_sections_unfolded = [ "Transform" ]
+frequency = 100
+
+[node name="Sprite" type="Sprite" parent="GunJoint" index="0"]
+
+position = Vector2( 18.7649, -0.0327454 )
+scale = Vector2( 0.6, 0.2 )
+texture = ExtResource( 29 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Muzzle" type="Node2D" parent="GunJoint" index="1"]
+
+show_behind_parent = true
+position = Vector2( 37.9193, -0.484772 )
+scale = Vector2( 0.21, 0.2 )
+_sections_unfolded = [ "Fill", "Transform" ]
+
+[node name="Line2D" type="Line2D" parent="GunJoint/Muzzle" index="0"]
+
+position = Vector2( -1.02209, 0.00183105 )
+points = PoolVector2Array( -0.0648193, -0.609741, 736.852, -6.25305 )
+width = 100.0
+default_color = Color( 1, 1, 1, 1 )
+texture = ExtResource( 29 )
+texture_mode = 1
+sharp_limit = 2.0
+round_precision = 20
+_sections_unfolded = [ "Border", "Capping", "Fill" ]
 
 

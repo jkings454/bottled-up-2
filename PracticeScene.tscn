@@ -31,7 +31,45 @@ bounce = 0.0
 
 shape = SubResource( 1 )
 
-[node name="RigidBody2D" parent="." index="2" instance=ExtResource( 2 )]
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="2"]
+
+editor/display_folded = true
+position = Vector2( -145.56, -157.803 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" index="0"]
+
+position = Vector2( -82.9827, -10.883 )
+rotation = 1.5708
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." index="3"]
+
+editor/display_folded = true
+position = Vector2( 448.923, -103.388 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" index="0"]
+
+position = Vector2( -82.9827, -10.883 )
+rotation = 1.5708
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="RigidBody2D" parent="." index="4" instance=ExtResource( 2 )]
 
 position = Vector2( 231.957, -244.163 )
 
