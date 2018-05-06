@@ -2,14 +2,14 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Cricket_Walk_00.png-e080752a966782824bb3fac96ee9719c.stex"
+path="res://.import/Cricket_W0.png-4861b83e074aa233a9a91329dc51b8c5.stex"
 
 [deps]
 
-source_file="res://Cricket/Walk/Cricket_Walk_00.png"
-source_md5="71b37c34c8fa8b8d835b49870e280557"
+source_file="res://Cricket/Walk/Cricket_W0.png"
+source_md5="dfed2d0a191c056a1abba38762a64ed1"
 
-dest_files=[ "res://.import/Cricket_Walk_00.png-e080752a966782824bb3fac96ee9719c.stex" ]
+dest_files=[ "res://.import/Cricket_W0.png-4861b83e074aa233a9a91329dc51b8c5.stex" ]
 dest_md5="ffe5303cb619e12476882c895700867a"
 
 [params]
