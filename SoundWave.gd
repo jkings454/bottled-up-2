@@ -10,3 +10,6 @@ func _physics_process(delta):
 	if get_parent().visible == true:
     	var space_rid = get_world_2d().space
     	var space_state = Physics2DServer.space_get_direct_state(space_rid)
+		
+	if is_colliding():
+    	var collider = get_collider()

@@ -22,7 +22,7 @@ animations = [ {
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
-mode = 0
+mode = 2
 mass = 1.0
 friction = 1.0
 bounce = 0.0
@@ -38,18 +38,19 @@ linear_damp = -1.0
 angular_velocity = 0.0
 angular_damp = -1.0
 script = ExtResource( 1 )
+_sections_unfolded = [ "Angular", "Applied Forces", "Linear" ]
 maxHealth = 100
 moveSpeed = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( -0.540405, 0 )
+position = Vector2( -0.873729, -1.08936 )
+scale = Vector2( 0.377411, 0.477356 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
 
-position = Vector2( -2.88546, -7.52941 )
-scale = Vector2( 0.401866, 0.401866 )
+scale = Vector2( 0.182457, 0.182457 )
 frames = SubResource( 2 )
 animation = "Idle"
 _sections_unfolded = [ "Transform" ]

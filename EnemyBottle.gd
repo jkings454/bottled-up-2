@@ -49,4 +49,5 @@ func damage(amount):
 	currentHealth -= amount
 	if currentHealth <= 0:
 		state = EnemyState.DIE
+		get_parent().remove_child(self)
 	pass
